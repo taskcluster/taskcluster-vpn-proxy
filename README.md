@@ -6,16 +6,16 @@ The taskcluster vpn proxy is meant to be used as a feature within
 There are two pieces to this proxy.  One is a nginx proxy that will forward traffic
 from port 80 to a distination specified in the PROXIED_SERVER environment variable.
 
-This environment variable is specified when [starting the docker container](#Running_Proxy).
+This environment variable is specified when [starting the docker container](#running-proxy).
 
 The VPN proxy will establish a connection with the remote specified
-in the [vpn configuration](#Configuration).
+in the [vpn configuration](#configuration).
 
 
 ## Configuration
 
 The proxy container will load the vpn configuration from /vpn within the container.
-The vpn configuration can be copied to this path by [building the docker container](#Building)
+The vpn configuration can be copied to this path by [building the docker container](#building)
 using the `build.sh` script.
 
 The vpn configuration is a standard openvpn configuration with keys, certificates,
@@ -23,7 +23,7 @@ and a configuration file.  The credentials should be entered into a file and thi
 will be used while authneticating with the vpn endpoint.
 
 
-##Building
+## Building
 
 The docker container can be built using the provided build script.  Clone this repo, adjust
 the VERSION and REGSITRY files to match your needed, and run:
@@ -36,7 +36,7 @@ The above script will copy the vpn configuration to a /data directory in the
 current directory so that it's available for Docker to bundle into the image.
 Once build, the data directory will be removed.
 
-##Running Proxy
+## Running Proxy
 
 To run the proxy, the following command could be used:
 
