@@ -17,7 +17,7 @@ COPY config/nginx.conf /etc/nginx/
 COPY data/vpn_config/ /vpn
 COPY bin/ /usr/local/bin/
 
-RUN chmod 600 /vpn/* && chmod 600 /vpn/*.key
+RUN chmod 600 /vpn/*
 
 EXPOSE 80
 ENTRYPOINT ["entrypoint"]
