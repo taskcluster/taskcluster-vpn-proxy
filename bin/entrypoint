@@ -1,0 +1,14 @@
+#! /bin/bash -e
+
+if [ -z $PROXIED_SERVER ]; then
+    echo "Environment variable PROXIED_SERVER must be set."
+    exit 1
+fi
+
+sed -i "s#<proxied_server>#${PROXIED_SERVER}#" /etc/nginx/nginx.conf
+
+mkdir /dev/net/ && mknod /dev/net/tun c 10 200
+chmod 0666 /dev/net/tun
+
+cd /vpn
+eval $@
