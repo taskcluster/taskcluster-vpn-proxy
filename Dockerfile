@@ -1,7 +1,8 @@
-FROM ubuntu:14.10
+FROM ubuntu:15.10
 
 WORKDIR /vpn
 
+RUN apt-get update -y
 RUN apt-get install -y curl
 RUN curl -sL http://nginx.org/keys/nginx_signing.key | apt-key add -
 RUN echo "deb http://nginx.org/packages/ubuntu/ utopic nginx" >> /etc/apt/sources.list && \
