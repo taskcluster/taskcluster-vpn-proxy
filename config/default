@@ -1,6 +1,6 @@
 server {
     listen 80;
     location / {
-        proxy_pass https://aus4-admin-dev.allizom.org;
+        proxy_pass https://balrog-admin.stage.mozaws.net;
     }
 }
